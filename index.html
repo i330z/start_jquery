@@ -9,15 +9,49 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <button id="clk">Click</button>
+        <button id="clk"><span>Good</span></button>
+        <form action="/dashboard" id="form">
+            <label>message</label>
+            <input type="text">
+            <button type="submit">submit</button>
+        </form>
+        <p id="test">
+            This is nothing but a big <b>bold</b> text
+        </p>
+        <button id="btn">Click me Now</button>
     </div>
+
+    <img src="download.jpg" alt="jqury"><br>
+    <button id="btn1">After</button>
+    <button id="btn2">Before</button>
 
     <script>
         $(document).ready(function(){
-            $("button").click(function(){
-                alert("Hello World");
-            });
+            // $("#form").on('submit', function(e){
+            //     e.preventDefault()
+            //     console.log($("input[type=text]").val())
+            // })
+
+            $("#form").submit(function(e){
+                e.preventDefault()
+                console.log($("input[type=text]").val())
+            })
         });
+
+
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                alert('TEXT:' + $("#test").text());
+            })
+            $("#btn1").click(function(){
+                $("img").after("<b>this is after</b>")
+            })
+            $("#btn2").click(function(){
+                $("img").before("<b>this is before</b>")
+            })
+
+             $("#test").prepend("i am a mango.")
+        })
     </script>
 </body>
 </html>
