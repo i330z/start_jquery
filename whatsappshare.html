@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    :root{
+        --background-color: orange;
+    }
+    body{
+        background-color: var(--background-color);
+    }
+
+    .swatches span{
+        height: 50px;
+        width:100px;
+        border: 1px solid black;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+    }
+    </style>
+
+  
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="swatches">
+            <span style="background:red;">RED</span>
+            <span style="background:blueviolet;">VIOLET</span>
+            <span style="background:yellow;">YELLOW</span>
+        </div>
+        <button id="whatsapp-button">Share</button>
+        <a href="whatsapp://send?text=www.google.com" data-action="share/whatsapp/share">share</a>
+    </div>
+
+
+    <script>
+        var swatches = document.querySelectorAll('.swatches span');
+        var root = document.querySelector(':root');
+
+        swatches.forEach((swatch) =>{
+            swatch.addEventListener('click',(e)=>{
+                root.style.setProperty('--background-color',e.target.style.background)
+                if(e.target.style.background == "yellow"){
+                    alert("YE BHI LOW")
+                }
+            })
+        })
+    
+    
+    </script>
+</body>
+</html>

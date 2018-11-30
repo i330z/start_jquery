@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>>
     <title>Document</title>
+    <style>
+    .para{
+        color: red;
+    }
+    </style>
 </head>
 <body>
     <div class="main-wrapper">
@@ -18,7 +24,8 @@
         <p id="test">
             This is nothing but a big <b>bold</b> text
         </p>
-        <button id="btn">Click me Now</button>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, laboriosam.</p>
+        <button id="btn">Turn Me Red</button>
     </div>
 
     <img src="download.jpg" alt="jqury"><br>
@@ -42,7 +49,17 @@
         $(document).ready(function(){
             $("#btn").click(function(){
                 alert('TEXT:' + $("#test").text());
+                $("p").toggleClass("para");
+                var classname = $("#test").attr('class')
+                if(classname == "para"){
+                    $("#btn").html("Turn Me Black")
+                }else{
+                    $("#btn").html("No color")
+                }
             })
+
+
+            
             $("#btn1").click(function(){
                 $("img").after("<b>this is after</b>")
             })
@@ -51,7 +68,12 @@
             })
 
              $("#test").prepend("i am a mango.")
+
+            
+
         })
+
+
     </script>
 </body>
 </html>
